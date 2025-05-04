@@ -96,6 +96,7 @@ class Main extends Widget_Base
                 'default' => esc_html__('Get Started', 'primekit-addons'),
                 'placeholder' => esc_html__('Type your button text here', 'primekit-addons'),
                 'label_block' => true,
+
             ]
         );
         // First Button Link
@@ -106,6 +107,9 @@ class Main extends Widget_Base
                 'type' => Controls_Manager::URL,
                 'placeholder' => esc_html__('https://your-link.com', 'primekit-addons'),
                 'show_external' => true,
+                'dynamic' => [
+                    'active' => true,
+                ],
                 'default' => [
                     'url' => '#',
                     'is_external' => false,
@@ -134,6 +138,9 @@ class Main extends Widget_Base
                 'type' => Controls_Manager::URL,
                 'placeholder' => esc_html__('https://your-link.com', 'primekit-addons'),
                 'show_external' => true,
+                'dynamic' => [
+                    'active' => true,
+                ],
                 'default' => [
                     'url' => '#',
                     'is_external' => false,
@@ -265,7 +272,7 @@ class Main extends Widget_Base
                 'selector' => '{{WRAPPER}} .primekit-cta-area',
             ]
         );
-        $this->add_control(
+        $this->add_responsive_control(
             'primekit_cta_box_border_radius',
             [
                 'label' => esc_html__('Border Radius', 'primekit-addons'),
@@ -279,7 +286,7 @@ class Main extends Widget_Base
 
 
         // Content Alignment Control
-        $this->add_control(
+        $this->add_responsive_control(
             'primekit_cta_content_alignment',
             [
                 'label' => esc_html__('Content Alignment', 'primekit-addons'),
@@ -520,7 +527,7 @@ class Main extends Widget_Base
                 ]
             ]
         );
-        
+
         // Button Alignment
         $this->add_responsive_control(
             'primekit_cta_button_alignment',
@@ -962,7 +969,6 @@ class Main extends Widget_Base
         );
 
         $this->end_controls_section();
-
     }
 
     /**
@@ -972,6 +978,4 @@ class Main extends Widget_Base
     {
         include 'RenderView.php';
     }
-
-
 }

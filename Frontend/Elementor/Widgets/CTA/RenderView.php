@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Render View file for CTA widget
  */
@@ -26,19 +27,20 @@ if (!empty($primekit_settings['primekit_cta_button_link_two']['url'])) {
 
 <!-- CTA Area -->
 <div class="primekit-cta-area<?php if ('yes' == $primekit_cta_zoom_effect):
-    echo esc_attr(' primekit-cta-zoom-effect-disabled');
-endif; ?>">
+                                    echo esc_attr(' primekit-cta-zoom-effect-disabled');
+                                endif; ?>">
 
 
     <?php if ('yes' == $primekit_cta_ribbon): ?>
         <!-- CTA Ribbon Area -->
         <div class="primekit-cta-ribbon-area <?php if ('left' == $primekit_cta_ribbon_position):
-            echo esc_attr('primekit-left-rabbon');
-        endif; ?>">
+                                                    echo esc_attr('primekit-left-rabbon');
+                                                endif; ?>">
             <div class="primekit-cta-ribbon-text">
                 <p><?php echo esc_html($primekit_settings['primekit_cta_ribbon_text']); ?></p>
             </div>
-        </div> <!--/ CTA Rabbon Area -->
+        </div>
+        <!--/ CTA Rabbon Area -->
     <?php endif; ?>
 
     <!-- CTA Content Area -->
@@ -60,21 +62,24 @@ endif; ?>">
             </div>
         <?php endif; ?>
 
-    </div><!--/ CTA Content Area -->
+    </div>
+    <!--/ CTA Content Area -->
 
     <?php if (!empty($primekit_btn1_text) || !empty($primekit_btn2_text)): ?>
         <!-- CTA Button -->
         <div class="primekit-cta-button-area">
             <?php if (!empty($primekit_btn1_text)): ?>
-                <a <?php echo esc_attr($this->get_render_attribute_string('primekit_cta_button_link_one')); ?>
+                <a <?php echo wp_kses_post($this->get_render_attribute_string('primekit_cta_button_link_one')); ?>
                     class="primekit-cta-button"><?php echo esc_html($primekit_btn1_text); ?></a>
             <?php endif; ?>
 
             <?php if (!empty($primekit_btn2_text)): ?>
-                <a <?php echo esc_attr($this->get_render_attribute_string('primekit_cta_button_link_two')); ?>
+                <a <?php echo wp_kses_post($this->get_render_attribute_string('primekit_cta_button_link_two')); ?>
                     class="primekit-cta-button"><?php echo esc_html($primekit_btn2_text); ?></a>
             <?php endif; ?>
 
-        </div><!--/ CTA Button -->
+        </div>
+        <!--/ CTA Button -->
     <?php endif; ?>
-</div><!--/ CTA Area -->
+</div>
+<!--/ CTA Area -->
