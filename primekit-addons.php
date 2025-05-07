@@ -4,8 +4,8 @@
  * Plugin URI: https://primekitaddons.com/
  * Description: The Elementor Custom Widgets plugin is built to enhance your website’s look and performance. With PrimeKit Addons and Templates, you’ll get access to a Theme Builder, Pop-Ups, Cost estimation, Pricing table, Forms, and WooCommerce building features, along with stunning custom elements that blend seamlessly with your site’s design.
  * Version: 1.1.0
- * Author: ABCPlugin
- * Author URI: https://abcplugin.com/
+ * Author: SupreoX Limited
+ * Author URI: https://supreox.com/
  * License: GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: primekit-addons
