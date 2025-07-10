@@ -13,6 +13,14 @@ if ($settings['primekit_advanced_list_items']) {
     foreach ($settings['primekit_advanced_list_items'] as $item) {
         echo '<li class="primekit-advanced-list-item">';
 
+        $anchor_url = isset($item['list_item_url']['url']) ? $item['list_item_url']['url'] : '';
+        // Check if the item has a URL
+        if (!empty($anchor_url)) {
+            $target = !empty($item['list_item_url']['is_external']) ? ' target="_blank"' : '';
+            $nofollow = !empty($item['list_item_url']['nofollow']) ? ' rel="nofollow"' : '';
+            echo '<a href="' . esc_url($item['list_item_url']['url']) . '" class="primekit-advanced-list-item-link"' . $target . $nofollow . '>';
+        }
+
         // Check if the icon is set and render it
         if ($item['list_assets_type'] == 'icon') {
             if (!empty($item['list_assets_icon'])) {
@@ -50,11 +58,18 @@ if ($settings['primekit_advanced_list_items']) {
             echo '<p class="primekit-advanced-list-text">' . esc_html($item['list_sub_title']) . '</p>';
         }
         //End sub-title rendering
-        echo '</div>
-        </li>';
+        echo '</div>';
+        if (!empty($anchor_url)) {
+            echo '</a>';
+        }
+        echo '</li>';
         // Increment the count for the next item
         $count++;
     }
 
     echo '</ul>';
 }
+
+
+
+

@@ -114,8 +114,26 @@ class Main extends Widget_Base
                         'default' => [
                             'url' => \Elementor\Utils::get_placeholder_image_src(),
                         ],
+                    ],
+
+                    // URL Control 
+                    [
+                        'name' => 'list_item_url',
+                        'label' => esc_html__('Link', 'primekit-addons'),
+                        'type' => \Elementor\Controls_Manager::URL,
+                        'options' => ['url', 'is_external', 'nofollow'],
+                        'default' => [
+                            'url' => '',
+                            'is_external' => true,
+                            'nofollow' => true,
+                            // 'custom_attributes' => '',
+                        ],
+                        'label_block' => true,
                     ]
+
                 ],
+
+
                 'default' => [
                     [
                         'list_title' => esc_html__('Title #1', 'primekit-addons'),
@@ -136,7 +154,7 @@ class Main extends Widget_Base
         );
 
         $this->end_controls_section(); // End content tab
-        
+
         // Start Style Tab
         $this->start_controls_section(
             'primekit_advanced_list_style',
@@ -188,6 +206,7 @@ class Main extends Widget_Base
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .primekit-advanced-list-wrapper .primekit-advanced-list-item' => 'gap: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .primekit-advanced-list-wrapper .primekit-advanced-list-item .primekit-advanced-list-item-link' => 'gap: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -455,10 +474,10 @@ class Main extends Widget_Base
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', 'rem', 'custom'],
                 'default' => [
-                    'top' => 6,
-                    'right' => 6,
-                    'bottom' => 6,
-                    'left' => 6,
+                    'top' => 06,
+                    'right' => 06,
+                    'bottom' => 06,
+                    'left' => 06,
                     'unit' => 'px',
                     'isLinked' => true,
                 ],
@@ -476,7 +495,7 @@ class Main extends Widget_Base
                 'selector' => '{{WRAPPER}} .primekit-advanced-list-wrapper .primekit-advanced-list-item-count span',
             ]
         );
-        $this->end_controls_section(); // End Count Typography
+        $this->end_controls_section(); // End Count style
 
         // Title & Sub Title Style
         $this->start_controls_section(
